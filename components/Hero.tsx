@@ -1,5 +1,5 @@
 "use client";
-import { text } from "body-parser";
+
 import { TypewriterEffectSmooth } from "./ui/typewriter-effect";
 export function TypewriterEffectSmoothDemo() {
   const words = [
