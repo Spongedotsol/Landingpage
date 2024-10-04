@@ -97,8 +97,8 @@ export function BentoGridDemo() {
             <Image 
               src="/spongewords.png" 
               alt="Sponge" 
-              width={500} 
-              height={500} 
+              width={400} 
+              height={400} 
               objectFit="contain"
             />
           </div>
