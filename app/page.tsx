@@ -7,7 +7,7 @@ import { Footer } from "../components/footer";
 const Page = () => {
   return (
     <div>
-      {/* <NavbarDemo /> */}
+      <NavbarDemo />
       <TypewriterEffectSmoothDemo />
       <BentoGridDemo />
       <Footer />

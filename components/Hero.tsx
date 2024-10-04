@@ -4,23 +4,23 @@ import { TypewriterEffectSmooth } from "./ui/typewriter-effect";
 export function TypewriterEffectSmoothDemo() {
   const words = [
     {
-      text: "Empower",
+      text: "Invest in crypto",
     },
     {
-      text: "irl payments",
+      text: "Easily, ",
+    },
+    {
+      text: "Securely",
       className: "text-blue-500 dark:text-blue-500",
     },
     {
-      text: "with",
-    },
-    {
-      text: "PayFi.",
+      text: "and Seamlessly.",
     },
   ];
   return (
     <div className="flex flex-col items-center justify-center h-[40rem]  ">
       <p className="text-neutral-600 dark:text-neutral-200 text-xs sm:text-base">
-      A PayFi lending protocol lets you pay never irl
+      An entry point for crypto investments
       </p>
       <TypewriterEffectSmooth words={words} />
       <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4">
