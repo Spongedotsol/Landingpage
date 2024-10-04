@@ -1,88 +1,141 @@
-import { cn } from "@/utils/cn";
 import React from "react";
 import Image from 'next/image';
-import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
-import {
-  IconArrowWaveRightUp,
-  IconBoxAlignRightFilled,
-  IconBoxAlignTopLeft,
-  IconClipboardCopy,
-  IconFileBroken,
-  IconSignature,
-  IconTableColumn,
-} from "@tabler/icons-react";
+import { cn } from "@/utils/cn";
+
+const BentoGrid = ({
+  className,
+  children,
+}: {
+  className?: string;
+  children: React.ReactNode;
+}) => {
+  return (
+    <div
+      className={cn(
+        "grid grid-cols-3 grid-rows-4 gap-4 max-w-7xl mx-auto p-4",
+        className
+      )}
+    >
+      {children}
+    </div>
+  );
+};
+
+const BentoGridItem = ({
+  className,
+  title,
+  description,
+  header,
+  icon,
+  colSpan = 1,
+  rowSpan = 1,
+}: {
+  className?: string;
+  title?: string | React.ReactNode;
+  description?: string | React.ReactNode;
+  header?: React.ReactNode;
+  icon?: React.ReactNode;
+  colSpan?: number;
+  rowSpan?: number;
+}) => {
+  return (
+    <div
+      className={cn(
+        "rounded-xl overflow-hidden shadow-lg transition-all duration-300 ease-in-out",
+        `col-span-${colSpan} row-span-${rowSpan}`,
+        "hover:shadow-2xl hover:scale-[1.02] hover:-translate-y-1",
+        className
+      )}
+    >
+      {header}
+      <div className="p-4">
+        <h3 className="font-bold text-lg mb-2">{title}</h3>
+        <p className="text-sm">{description}</p>
+      </div>
+    </div>
+  );
+};
 
 export function BentoGridDemo() {
   return (
-    <BentoGrid className="max-w-6xl mx-auto">
-      {items.map((item, i) => (
-        <BentoGridItem
-          key={i}
-          title={item.title}
-          description={item.description}
-          header={item.header}
-          icon={item.icon}
-          className={i === 3 || i === 6 ? "md:col-span-2" : ""}
-        />
-      ))}
+    <BentoGrid>
+      <BentoGridItem
+        title={
+          <div>
+            <div>The crypto investment market index on Solana</div>
+          </div>
+        }
+        className="flex items-center justify-center bg-blue-300 hover:bg-blue-400 row-span-1 col-span-1"
+      />
+      <BentoGridItem
+        title="Multi Assets Vault"
+        description="Strategic asset allocation"
+        className="flex items-center justify-center bg-gray-200 hover:bg-gray-300 row-span-1 col-span-1"
+      />
+      <BentoGridItem
+        title="Multichain Liquidity"
+        description="Solana, SVM L2, BTC"
+        className="flex items-center justify-center bg-white hover:bg-gray-100 row-span-1 col-span-1"
+      />
+      <BentoGridItem
+        header={
+          <div className="w-full h-full flex items-center justify-center">
+            <Image 
+              src="/followx.jpg" 
+              alt="followx" 
+              width={250} 
+              height={250} 
+              objectFit="contain"
+            />
+          </div>
+        }
+        className="bg-gray-200 hover:bg-gray-300 row-span-1 col-span-1"
+      />
+      <BentoGridItem
+        header={
+          <div className="w-full h-full flex items-center justify-center">
+            <Image 
+              src="/spongewords.png" 
+              alt="Sponge" 
+              width={500} 
+              height={500} 
+              objectFit="contain"
+            />
+          </div>
+        }
+        className="bg-white hover:bg-gray-100 row-span-1 col-span-1"
+      />
+      <BentoGridItem
+        title="Earn yields from different protocols"
+        className="flex items-center justify-center bg-blue-300 hover:bg-blue-400 row-span-1 col-span-1"
+      />
+      <BentoGridItem
+        title="Sponge Pools"
+        description="Multi-chain Liquidity Marketplace"
+        className="flex items-center justify-center bg-blue-300 hover:bg-blue-400 row-span-1 col-span-1"
+      />
+      <BentoGridItem
+        title="Payfi Integration"
+        description="Stake assets, pay irl"
+        className="flex items-center justify-center bg-gray-200 hover:bg-gray-300 row-span-1 col-span-2"
+      />
+      {/* <BentoGridItem
+        title="Our investors"
+        description={<InvestorLogos />}
+        className="bg-white hover:bg-gray-100 row-span-1 col-span-2"
+      />
+      <BentoGridItem
+        title="We need your help to build this future"
+        description={<LaunchAppButton />}
+        className="bg-white hover:bg-gray-100 row-span-1 col-span-3"
+      /> */}
     </BentoGrid>
   );
 }
-const Skeleton = ({ image }: { image?: string }) => (
-  <div className="relative flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100 overflow-hidden">
-    {image && (
-      <Image 
-        src={image} 
-        alt="Background"
-        layout="fill"
-        objectFit="cover"
-        className="mix-blend-overlay"
-      />
-    )}
-  </div>
-);const items = [
-  {
-    title: "Sponge",
-    description: "The entry for crypto investments",
-    image: "/images/sponge.jpg",
-    header: <Skeleton />,
-    icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "Investment Index for crypto",
-    description: "Stake assets and earn yields.",
-    header: <Skeleton />,
-    icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "Multi Assets Vault",
-    description: "Strategic asset allocation",
-    header: <Skeleton />,
-    icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "Multichain Liquidity",
-    description:
-      "Solana, SVM L2, BTC",
-    header: <Skeleton />,
-    icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "Beta Testing Q4 2024",
-    description: "",
-    header: <Skeleton />,
-    icon: <IconArrowWaveRightUp className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "Earn yields from different protocols",
-    description: "Farm yields from different protocols",
-    header: <Skeleton />,
-    icon: <IconBoxAlignTopLeft className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "Payfi integration",
-    description: "Stake assets, and pay irl",
-    header: <Skeleton />,
-    icon: <IconBoxAlignRightFilled className="h-4 w-4 text-neutral-500" />,
-  },
-];
+
+
+const JoinWaitlistButton = () => (
+  <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-200">
+    Join Waitlist
+  </button>
+);

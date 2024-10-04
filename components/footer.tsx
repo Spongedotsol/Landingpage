@@ -17,7 +17,7 @@ export function Footer() {
 
       {/* Twitter Icon */}
       <div className="absolute bottom-4 right-4 mt-20">
-        <a href="https://x.com/Snail__Finance" className="text-gray-600 hover:text-black transition-colors duration-300">
+        <a href="https://x.com/spongedotsol" className="text-gray-600 hover:text-black transition-colors duration-300">
           <FontAwesomeIcon 
             icon={faXTwitter} 
             size="lg" 
