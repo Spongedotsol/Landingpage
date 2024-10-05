@@ -95,7 +95,7 @@ export function BentoGridDemo() {
         header={
           <div className="w-full h-full flex items-center justify-center">
             <Image 
-              src="/spongewords.png" 
+              src="/Spongewords.png" 
               alt="Sponge" 
               width={400} 
               height={400} 
