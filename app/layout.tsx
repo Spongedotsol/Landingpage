@@ -24,9 +24,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" >
-      <Head>
-        <link rel="icon" href="/spongenobg.png" sizes="any" />
-      </Head>
       <body className={inter.className}>
         <div className="bg-white dark:bg-black">
           {children}
