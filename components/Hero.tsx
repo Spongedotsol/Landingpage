@@ -10,11 +10,11 @@ export function TypewriterEffectSmoothDemo() {
       text: "Easily, ",
     },
     {
-      text: "Securely",
-      className: "text-blue-500 dark:text-blue-500",
+      text: "Securely and ",
     },
     {
-      text: "and Seamlessly.",
+      text: "Seamlessly.",
+      className: "text-blue-500 dark:text-blue-500",
     },
   ];
   return (
