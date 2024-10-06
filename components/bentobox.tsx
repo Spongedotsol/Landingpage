@@ -2,6 +2,16 @@ import React from "react";
 import Image from 'next/image';
 import { cn } from "@/utils/cn";
 
+const MarqueeText = ({ children }: { children: React.ReactNode }) => (
+  <div className="marquee-container overflow-hidden w-full">
+    <div className="marquee-content whitespace-nowrap animate-marquee">
+      {children}
+      <span className="mx-4">•</span>
+      {children}
+    </div>
+  </div>
+);
+
 const BentoGrid = ({
   className,
   children,
@@ -12,7 +22,8 @@ const BentoGrid = ({
   return (
     <div
       className={cn(
-        "grid grid-cols-3 grid-rows-4 gap-4 max-w-7xl mx-auto p-4",
+        "grid grid-cols-1 sm:grid-cols-3 sm:grid-rows-4 gap-4 max-w-7xl mx-auto p-4",
+        "auto-rows-fr",
         className
       )}
     >
@@ -42,13 +53,14 @@ const BentoGridItem = ({
     <div
       className={cn(
         "rounded-xl overflow-hidden shadow-lg transition-all duration-300 ease-in-out",
-        `col-span-${colSpan} row-span-${rowSpan}`,
+        `sm:col-span-${colSpan} sm:row-span-${rowSpan}`,
         "hover:shadow-2xl hover:scale-[1.02] hover:-translate-y-1",
+        "h-full",
         className
       )}
     >
       {header}
-      <div className="p-4">
+      <div className="p-4 h-full flex flex-col justify-center">
         <h3 className="font-bold text-lg mb-2">{title}</h3>
         <p className="text-sm">{description}</p>
       </div>
@@ -61,21 +73,44 @@ export function BentoGridDemo() {
     <BentoGrid>
       <BentoGridItem
         title={
-          <div>
-            <div>The crypto investment market index on Solana</div>
+          <div className="flex justify-between items-start w-full">
+            <div className="text-lg font-semibold">The First ETF-Like LSTs on Solana</div>
           </div>
-        }
-        className="flex items-center justify-center bg-blue-300 hover:bg-blue-400 row-span-1 col-span-1"
+            }
+        className="flex items-center justify-center bg-cyan-300 hover:bg-cyan-400"
+      />
+<BentoGridItem
+  title={
+    <div className="flex justify-between items-start w-full">
+      <div className="text-sm font-semibold text-white">Multi Assets Vault</div>
+    </div>
+  }
+  description={
+    <>
+      <h3 className="text-2xl font-semibold mb-4 text-white">Strategic assets allocation</h3>
+    </>
+  }
+  className="flex flex-col justify-between bg-blue-300 hover:bg-blue-400 p-6"
       />
       <BentoGridItem
-        title="Multi Assets Vault"
-        description="Strategic asset allocation"
-        className="flex items-center justify-center bg-gray-200 hover:bg-gray-300 row-span-1 col-span-1"
-      />
-      <BentoGridItem
-        title="Multichain Liquidity"
-        description="Solana, SVM L2, BTC"
-        className="flex items-center justify-center bg-white hover:bg-gray-100 row-span-1 col-span-1"
+  title={
+    <div className="flex justify-between items-start w-full">
+      <div className="text-sm font-semibold text-gray-500">Bridging Liquidity to SVM chains</div>
+      <div className="text-sm font-semibold text-gray-500"></div>
+    </div>
+  }
+  description={
+    <>
+      <div className="mt-auto">
+        <MarqueeText>
+          <span className="text-2xl font-semibold mb-4 mx-4">Solana</span>
+          <span className="text-2xl font-semibold mb-4 mx-4">SVM</span>
+          <span className="text-2xl font-semibold mb-4 mx-4">SVM L2s</span>
+        </MarqueeText>
+      </div>
+    </>
+  }
+  className="flex flex-col justify-between bg-gray-100 hover:bg-gray-200 p-6"
       />
       <BentoGridItem
         header={
@@ -89,13 +124,13 @@ export function BentoGridDemo() {
             />
           </div>
         }
-        className="bg-gray-200 hover:bg-gray-300 row-span-1 col-span-1"
+        className="bg-white hover:bg-gray-100"
       />
       <BentoGridItem
         header={
           <div className="w-full h-full flex items-center justify-center">
             <Image 
-              src="/Spongewords.png" 
+              src="/Spongewordsnobg.png" 
               alt="Sponge" 
               width={400} 
               height={400} 
@@ -103,39 +138,44 @@ export function BentoGridDemo() {
             />
           </div>
         }
-        className="bg-white hover:bg-gray-100 row-span-1 col-span-1"
+        className="bg-orange-200 hover:bg-orange-300"
       />
       <BentoGridItem
-        title="Earn yields from different protocols"
-        className="flex items-center justify-center bg-blue-300 hover:bg-blue-400 row-span-1 col-span-1"
+        title={
+          <div className="flex justify-between items-start w-full">
+            <div className="text-lg font-semibold">Stake SOL Get Exposure from Bluechips</div>
+          </div>
+            }
+        className="flex items-center justify-center bg-cyan-300 hover:bg-cyan-400"
       />
       <BentoGridItem
-        title="Sponge Pools"
-        description="Multi-chain Liquidity Marketplace"
-        className="flex items-center justify-center bg-blue-300 hover:bg-blue-400 row-span-1 col-span-1"
+        title={
+          <div>
+            <div className="text-sm font-semibold text-white">Multi SVM chains Liquidity Marketplace</div>
+          </div>
+        }
+        description={
+          <>
+            <h3 className="text-2xl font-semibold mb-4 text-white">Sponge Pools</h3>
+          </>
+        }
+        className="flex items-center justify-center bg-indigo-300 hover:bg-indigo-400"
       />
       <BentoGridItem
-        title="Payfi Integration"
-        description="Stake assets, pay irl"
-        className="flex items-center justify-center bg-gray-200 hover:bg-gray-300 row-span-1 col-span-2"
+        title={
+          <div className="flex justify-between items-start w-full">
+            <div className="text-lg font-semibold text-gray-500">Stake assets, pay irl</div>
+          </div>
+            }
+            description={
+              <>
+                <h3 className="text-2xl font-semibold mb-4">Sponge Pay</h3>
+              </>
+            }
+        className="flex items-center justify-center bg-red-200 hover:bg-red-300 sm:col-span-2"
       />
-      {/* <BentoGridItem
-        title="Our investors"
-        description={<InvestorLogos />}
-        className="bg-white hover:bg-gray-100 row-span-1 col-span-2"
-      />
-      <BentoGridItem
-        title="We need your help to build this future"
-        description={<LaunchAppButton />}
-        className="bg-white hover:bg-gray-100 row-span-1 col-span-3"
-      /> */}
     </BentoGrid>
   );
 }
 
-
-const JoinWaitlistButton = () => (
-  <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-200">
-    Join Waitlist
-  </button>
-);
+export { BentoGrid, BentoGridItem };
