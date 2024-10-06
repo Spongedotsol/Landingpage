@@ -82,12 +82,12 @@ export function BentoGridDemo() {
 <BentoGridItem
   title={
     <div className="flex justify-between items-start w-full">
-      <div className="text-sm font-semibold text-white">Multi Assets Vault</div>
+      <div className="text-sm font-semibold text-white">Strategic Assets Allocation</div>
     </div>
   }
   description={
     <>
-      <h3 className="text-2xl font-semibold mb-4 text-white">Strategic assets allocation</h3>
+      <h3 className="text-2xl font-semibold mb-4 text-white">Sponge Vaults</h3>
     </>
   }
   className="flex flex-col justify-between bg-blue-300 hover:bg-blue-400 p-6"
