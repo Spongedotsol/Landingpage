@@ -21,18 +21,18 @@ function Navbar({ className }: { className?: string }) {
         <Image 
           src="/spongenobg.png"
           alt="Sponge Logo"
-          width={48}  // 調整寬度以適應您的需求
-          height={48} // 調整高度以適應您的需求
-          className="mr-2" // 在圖片和文字之間添加一些間距
+          width={48}  
+          height={48} 
+          className="mr-2" 
         />
         <Link href="/">Sponge</Link>
       </div>
       <Link 
-          href="/launch-app" 
+          href="https://lst-aggregator.vercel.app/" 
           className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300"
         >
           Launch App
-        </Link>
+      </Link>
       </div>
   );
 }

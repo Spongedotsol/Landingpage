@@ -6,6 +6,8 @@ import { Footer } from "../components/footer";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  title: "Sponge",
+  description:"Stake SOL, Get Exposure from Bluechips",
   icons: {
     icon: '/spongenobg.png',
   },
