@@ -151,7 +151,7 @@ export function BentoGridDemo() {
       <BentoGridItem
         title={
           <div>
-            <div className="text-sm font-semibold text-white">Multi SVM chains Liquidity Marketplace</div>
+            <div className="text-sm font-semibold text-white">SVM Multi-Chains Liquidity Marketplace</div>
           </div>
         }
         description={
@@ -164,7 +164,7 @@ export function BentoGridDemo() {
       <BentoGridItem
         title={
           <div className="flex justify-between items-start w-full">
-            <div className="text-lg font-semibold text-gray-500">Stake assets, pay irl</div>
+            <div className="text-lg font-semibold text-gray-500">Stake Assets, Pay IRL</div>
           </div>
             }
             description={
