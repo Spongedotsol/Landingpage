@@ -21,11 +21,11 @@ function Navbar({ className }: { className?: string }) {
         <Image 
           src="/spongenobg.png"
           alt="Sponge Logo"
-          width={48}  
-          height={48} 
+          width={60}  
+          height={60} 
           className="mr-2" 
         />
-        <Link href="/">Sponge</Link>
+        <Link href="https://x.com/spongedotsol">Sponge</Link>
       </div>
       <Link 
           href="https://lst-aggregator.vercel.app/" 
