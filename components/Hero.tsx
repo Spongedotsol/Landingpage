@@ -7,10 +7,10 @@ export function TypewriterEffectSmoothDemo() {
       text: "Invest in crypto",
     },
     {
-      text: "Easily, ",
+      text: "Securely, ",
     },
     {
-      text: "Securely and ",
+      text: "Effortlessly and ",
     },
     {
       text: "Seamlessly.",
