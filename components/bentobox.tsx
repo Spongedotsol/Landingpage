@@ -74,7 +74,7 @@ export function BentoGridDemo() {
       <BentoGridItem
         title={
           <div className="flex justify-between items-start w-full">
-            <div className="text-lg font-semibold">The First ETF-Like LSTs on Solana</div>
+            <div className="text-lg font-semibold">The First ETF-Like LST on Solana</div>
           </div>
             }
         className="flex items-center justify-center bg-cyan-300 hover:bg-cyan-400"
@@ -90,7 +90,7 @@ export function BentoGridDemo() {
       <h3 className="text-2xl font-semibold mb-4 text-white">Sponge Vaults</h3>
     </>
   }
-  className="flex flex-col justify-between bg-blue-300 hover:bg-blue-400 p-6"
+  className="flex items-center justify-center bg-blue-300 hover:bg-blue-400 p-6"
       />
       <BentoGridItem
   title={

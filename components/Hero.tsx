@@ -24,12 +24,15 @@ export function TypewriterEffectSmoothDemo() {
       </p>
       <TypewriterEffectSmooth words={words} />
       <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4">
-        {/* <a href="">
-          <button className="w-40 h-10 rounded-xl bg-black border dark:border-white border-transparent text-white text-sm">
-            Join now
+        <a href="https://a0ngksn2f5g.typeform.com/to/yGReqBFt">
+          <button className="w-40 h-10 rounded-xl bg-black border dark:border-white border-transparent text-white text-sm
+                     transition duration-300 ease-in-out
+                     hover:bg-opacity-80
+                     active:bg-opacity-60 active:transform active:scale-95">
+            Join the waitlist
           </button>
         </a>
-        <a href="">
+        {/* <a href="">
         <button className="w-40 h-10 rounded-xl bg-white text-black border border-black  text-sm">
           Document
           </button>

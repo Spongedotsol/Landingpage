@@ -29,7 +29,7 @@ function Navbar({ className }: { className?: string }) {
       </div>
       <Link 
           href="https://lst-aggregator.vercel.app/" 
-          className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300"
+          className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-xl transition duration-300"
         >
           Launch App
       </Link>
