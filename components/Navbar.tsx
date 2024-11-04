@@ -28,7 +28,7 @@ function Navbar({ className }: { className?: string }) {
         <Link href="https://x.com/spongedotsol">Sponge</Link>
       </div>
       <Link 
-          href="https://lst-aggregator.vercel.app/" 
+          href="https://app.spongehq.xyz/" 
           className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-xl transition duration-300"
         >
           Launch App
