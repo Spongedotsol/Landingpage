@@ -1,0 +1,23 @@
+
+
+<!-- public/patterns/rotateSquare.svg -->
+<svg
+  width="60"
+  height="60"
+  viewBox="0 0 60 60"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- 背景留白 或 fill="none" 都可以 -->
+  <rect x="0" y="0" width="40" height="40" fill="none" />
+
+  <!-- 32x32 白色方塊，圓角 6，並旋轉 -15 度 -->
+  <rect
+    x="4"
+    y="4"
+    width="52"
+    height="52"
+    rx="16"
+    fill="#ffffff"
+  />
+</svg>

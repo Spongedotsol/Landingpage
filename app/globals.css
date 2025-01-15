@@ -21,3 +21,65 @@
   width: 100%;
   overflow: hidden;
 }
+
+/* app/globals.css 或其他全域CSS檔 */
+
+
+
+
+.bg-graySquares {
+  /* 背景基底：淡灰 */
+  background-color: #f5f5f5;
+
+  /* 重複顯示外部 svg 圖檔 (public/patterns/rotateSquare.svg) */
+  background-image: url("/patterns/rotateSquare.svg");
+  background-repeat: repeat;
+
+  /* 每個 svg 塊大小 (對應 40x40)；可視需要再調大或變小 */
+  background-size: 40px 40px;
+}
+
+
+.bg-whiteSquares {
+
+  /* 背景基底：白 */
+  background-color: #f5f5f5;
+
+  /* 重複顯示外部 svg 圖檔 (public/patterns/rotateSquare.svg) */
+  background-image: url("/patterns/rotateSquare.svg");
+  background-repeat: repeat;
+
+  /* 每個 svg 塊大小 (對應 40x40)；可視需要再調大或變小 */
+  background-size: 60px 60px;
+
+  /* 整個傾斜 -15 度 */
+  transform: rotate(-15deg);
+
+  /* 為了避免傾斜後超出原本的容器範圍，可以使用 transform-origin 調整起始點 */
+  /* transform-origin: center; */
+}
+
+.bg-whiteSquares::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-color: #f5f5f5;
+  background-image: url("/patterns/rotateSquare.svg");
+  background-repeat: repeat;
+  background-size: 60px 60px;
+  transform: rotate(-15deg);
+  transform-origin: center;
+  z-index: -1; /* 背景層 */
+}
+
+/* .h1-custom {
+  width: 100%;
+  border-width: 8px;
+  border-color: black;
+  text-align: center;
+  padding: 1rem;
+  box-sizing: border-box;
+} */
