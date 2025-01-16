@@ -4,17 +4,31 @@ import { nanumPen } from "../app/fonts";
 
 export function Hero() {
   return (
-    // 去掉原本 px-4, max-w-6xl 等限制寬度的 class，僅保留上下內距
     <div className="relative pt-8 md:pt-16 pb-16 md:pb-24">
-      {/* 大標題區：用負邊距貼齊 OutlineContainer 的左右黑線 */}
-      <div className="relative -mx-6 md:-mx-8">
-        <h1 className="text-[10rem] sm:text-[12rem] md:text-[14rem] lg:text-[16rem] font-black leading-none tracking-tighter">
+      {/* 大標題區：讓文字更大、貼近左右黑框 */}
+      <div className="relative px-2 md:px-4">
+        {/* 你可以視需求，讓文字略微超出或貼邊 */}
+        <h1
+          className="
+    text-[15rem] /* 修改這裡變大 */
+    sm:text-[19rem] /* 修改這裡變大 */
+    md:text-[23rem] /* 修改這裡變大 */
+    lg:text-[27rem] /* 修改這裡變大 */
+    xl:text-[31rem] /* 修改這裡變大 */
+    font-black
+    leading-none
+    tracking-tight
+    // 原本就有 -mx-2 md:-mx-4，
+    // 可以再往左一點，視覺上更貼邊
+      -mx-14 md:-mx-16
+  "
+        >
           SPNGE
         </h1>
       </div>
 
       {/* 主要文字 + 圖片區 */}
-      <div className="mt-8 md:mt-12 flex flex-col md:flex-row items-start md:items-center gap-8">
+      <div className="mt-8 md:mt-12 flex flex-col md:flex-row items-start md:items-center gap-8 px-4 md:px-8">
         {/* 文字文案區 */}
         <div>
           <h2 className="text-3xl md:text-4xl font-black leading-tight">
@@ -28,57 +42,39 @@ export function Hero() {
         </div>
 
         {/* 海綿角色圖示 + 浮動文字 */}
-
         <div className="flex items-center justify-center">
-          {/* 左側：Sponge Man 圖片 */}
-          <div className="relative w-64 h-64">
+          {/* Sponge Man 圖片 */}
+          <div className="relative w-48 h-48 md:w-64 md:h-64">
             <Image
               src="/spongeMan.png"
               alt="Sponge Man"
-              width={500}
-              height={500}
+              fill
               style={{ objectFit: "contain" }}
             />
           </div>
 
-          {/* 右側：箭頭 + 浮動文字，預設給點間距 */}
-
-          <div
-            className="
-    flex
-    flex-col       /* 垂直排列 */
-    items-center   /* 水平置中 */
-  "
-          >
+          {/* 箭頭 + 浮動文字 */}
+          <div className="flex flex-col items-center ml-2 md:ml-6">
             {/* 箭頭容器：在上面 */}
-            <div
-              className="
-      transform
-      origin-left
-      
-    "
-            >
-              {/* 箭頭 SVG (從右往左繪製) */}
+            <div className="transform origin-left">
               <Image
-              src="/arrow.png"
-              alt="arrow"
-              width={50}
-              height={50}
-              style={{ objectFit: "contain" }}
-            />
+                src="/arrow.png"
+                alt="arrow"
+                width={60}
+                height={60}
+                style={{ objectFit: "contain" }}
+              />
             </div>
-
             {/* 文字容器：在下面 */}
             <div
-              className="
-      transform
-      origin-left
-      rotate-[-12deg]   /* 讓文字整體傾斜 -12 度 */
-      mt-8             /* 與箭頭保持一點垂直間距 */
-      translate-x-4    /* 水平右移 1rem，增加一點偏移 */
-    "
+              className={`
+                transform origin-left rotate-[-12deg] mt-4 md:mt-6
+                translate-x-2 md:translate-x-4
+              `}
             >
-              <p className={`text-4xl ${nanumPen.className}`}>Add liquidity</p>
+              <p className={`text-2xl md:text-4xl ${nanumPen.className}`}>
+                Add liquidity
+              </p>
             </div>
           </div>
         </div>
@@ -86,6 +82,91 @@ export function Hero() {
     </div>
   );
 }
+
+// export function Hero() {
+//   return (
+//     // 去掉原本 px-4, max-w-6xl 等限制寬度的 class，僅保留上下內距
+//     <div className="relative pt-8 md:pt-16 pb-16 md:pb-24">
+//       {/* 大標題區：用負邊距貼齊 OutlineContainer 的左右黑線 */}
+//       <div className="relative -mx-6 md:-mx-8">
+//         <h1 className="text-[10rem] sm:text-[12rem] md:text-[14rem] lg:text-[16rem] font-black leading-none tracking-tighter">
+//           SPNGE
+//         </h1>
+//       </div>
+
+//       {/* 主要文字 + 圖片區 */}
+//       <div className="mt-8 md:mt-12 flex flex-col md:flex-row items-start md:items-center gap-8">
+//         {/* 文字文案區 */}
+//         <div>
+//           <h2 className="text-3xl md:text-4xl font-black leading-tight">
+//             INVEST IN CRYPTO
+//             <br />
+//             <span className="text-[#90B873]">SEAMLESSLY</span>
+//           </h2>
+//           <Button variant="secondary" size="lg" className="mt-6">
+//             Join the waitlist
+//           </Button>
+//         </div>
+
+//         {/* 海綿角色圖示 + 浮動文字 */}
+
+//         <div className="flex items-center justify-center">
+//           {/* 左側：Sponge Man 圖片 */}
+//           <div className="relative w-64 h-64">
+//             <Image
+//               src="/spongeMan.png"
+//               alt="Sponge Man"
+//               width={500}
+//               height={500}
+//               style={{ objectFit: "contain" }}
+//             />
+//           </div>
+
+//           {/* 右側：箭頭 + 浮動文字，預設給點間距 */}
+
+//           <div
+//             className="
+//     flex
+//     flex-col       /* 垂直排列 */
+//     items-center   /* 水平置中 */
+//   "
+//           >
+//             {/* 箭頭容器：在上面 */}
+//             <div
+//               className="
+//       transform
+//       origin-left
+
+//     "
+//             >
+//               {/* 箭頭 SVG (從右往左繪製) */}
+//               <Image
+//               src="/arrow.png"
+//               alt="arrow"
+//               width={50}
+//               height={50}
+//               style={{ objectFit: "contain" }}
+//             />
+//             </div>
+
+//             {/* 文字容器：在下面 */}
+//             <div
+//               className="
+//       transform
+//       origin-left
+//       rotate-[-12deg]   /* 讓文字整體傾斜 -12 度 */
+//       mt-8             /* 與箭頭保持一點垂直間距 */
+//       translate-x-4    /* 水平右移 1rem，增加一點偏移 */
+//     "
+//             >
+//               <p className={`text-4xl ${nanumPen.className}`}>Add liquidity</p>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
 
 // export function Hero() {
 //   return (
