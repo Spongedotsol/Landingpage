@@ -83,3 +83,20 @@
   padding: 1rem;
   box-sizing: border-box;
 } */
+
+.crypto-invest-section {
+  text-align: left; /* 文字靠左對齊，與設計圖一致 */
+  padding: 20px; /* 調整內距，讓版面更一致 */
+}
+
+.title {
+  font-size: 2rem; /* 使用適當字體大小，根據裝置響應式調整 */
+  font-weight: 900; /* 字體加粗，與設計圖一致 */
+  line-height: 1.2; /* 行距緊密，但保持可讀性 */
+}
+
+.title .highlight {
+  color: #90B873; /* 綠色字體，符合設計圖 */
+  font-weight: 900; /* 維持加粗樣式 */
+  display: inline-block; /* 使其保持內聯但突出顯示 */
+}

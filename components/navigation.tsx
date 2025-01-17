@@ -2,6 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Menu } from 'lucide-react'
 import { Button } from "@/components/ui/button"
+import { nanumPen } from "../app/fonts";
 
 export function Navigation() {
   return (
@@ -9,7 +10,7 @@ export function Navigation() {
       {/* 左側 Logo 與文字 */}
       <div className="flex items-center gap-3">
         <Link href="/" className="flex items-center gap-2">
-          <span className="text-2xl md:text-3xl font-bold">Sponge</span>
+        <span className={`text-4xl md:text-6xl font-bold ${nanumPen.className}`}>Sponge</span>
           {/* <span className="text-xs md:text-sm text-gray-600">powered by</span> */}
           {/* 若有品牌小圖示，可在此放置 */}
           {/* <Image src="/powered_by_s.png" alt="powered by S" width={24} height={24} /> */}

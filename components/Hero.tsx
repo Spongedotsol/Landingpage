@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { nanumPen } from "../app/fonts";
+import { poppins } from '../app/fonts' // 引入 Poppins
+
 
 export function Hero() {
   return (
@@ -30,15 +32,16 @@ export function Hero() {
       {/* 主要文字 + 圖片區 */}
       <div className="mt-8 md:mt-12 flex flex-col md:flex-row items-start md:items-center gap-8 px-4 md:px-8">
         {/* 文字文案區 */}
-        <div>
-          <h2 className="text-3xl md:text-4xl font-black leading-tight">
-            INVEST IN CRYPTO
+        <div className="crypto-invest-section">
+          <h2 className={`${poppins.className} title`}>
+            INVEST IN
             <br />
-            <span className="text-[#90B873]">SEAMLESSLY</span>
+            CRYPTO
+            <br />
+            <span className={`${nanumPen.className} highlight`}>
+              SEAMLESSLY
+            </span>
           </h2>
-          <Button variant="secondary" size="lg" className="mt-6">
-            Join the waitlist
-          </Button>
         </div>
 
         {/* 海綿角色圖示 + 浮動文字 */}
