@@ -62,7 +62,7 @@ const BentoGridItem = ({
       {header}
       <div className="p-4 h-full flex flex-col justify-center">
         <h3 className="font-bold text-lg mb-2">{title}</h3>
-        <p className="text-sm">{description}</p>
+        <div className="text-sm">{description}</div>
       </div>
     </div>
   );

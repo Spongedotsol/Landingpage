@@ -79,7 +79,7 @@ const LandingPage = () => {
             />
           </div>
           <div className="flex items-center gap-10">
-            {/* <Link
+            <Link
               href="https://x.com/spongedotsol"
               className="font-poppins font-semibold transition-transform duration-300 hover:scale-105"
             >
@@ -90,7 +90,7 @@ const LandingPage = () => {
               className="font-poppins font-semibold transition-transform duration-300 hover:scale-105"
             >
               About us
-            </Link> */}
+            </Link>
             <Link
               href="https://app.spongehq.xyz/"
               className="flex font-poppins font-semibold bg-[url('/landing/launch.png')] bg-cover w-[160px] h-[56px] justify-center items-center transition-transform duration-300 hover:scale-105"
