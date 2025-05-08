@@ -1,37 +1,34 @@
-'use client'
-
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
 
 const images = [
   {
-    src: "/landing/brands/brand2.png",
+    src: "/landing/brands/brand2.jpg",
     alt: "Solana",
   },
   {
     src: "/landing/brands/brand3.png",
-    alt: "Jito",
+    alt: "Soon",
   },
   {
     src: "/landing/brands/brand4.png",
-    alt: "Superteam",
+    alt: "Jito",
   },
   {
     src: "/landing/brands/brand5.png",
-    alt: "Solana",
+    alt: "Raydium",
   },
   {
     src: "/landing/brands/brand6.png",
-    alt: "",
+    alt: "Solana Foundation",
   },
   {
     src: "/landing/brands/brand7.png",
-    alt: "",
+    alt: "Superteam",
   },
   {
     src: "/landing/brands/brand8.png",
-    alt: "",
+    alt: "Solar",
   },
   {
     src: "/landing/brands/brand9.png",
@@ -40,20 +37,6 @@ const images = [
 ];
 
 const LandingPage = () => {
-  const ref = useRef((null as unknown) as HTMLDivElement);
-  
-  const [duration, setDuration] = useState(2);
-  useEffect(() => {
-    let factor = 1;
-    if (ref.current) {
-      const width = ref.current.clientWidth;
-      const pwidth = ref.current.parentElement!.clientWidth;
-      factor = (width - (width % pwidth)) / pwidth + 1;
-    }
-    // 258px的宽度按照2s内阅读完成的 滚动速度
-    setDuration(factor * 2);
-  }, [])
-
   return (
     <div className="flex flex-col align-between relative h-screen w-full overflow-hidden pb-10">
       <div
@@ -66,8 +49,10 @@ const LandingPage = () => {
       <div className="grid justify-between relative z-20 w-full h-full">
         <header className="flex items-center px-10 justify-center z-10">
           <div className="flex items-center gap-2 absolute top-10 left-10">
-            <Link href='https://x.com/spongedotsol'>
-              <p className="text-3xl font-nanum animate-pulse drop-shadow-[0_0_4px_rgba(0, 0, 0,0.8)]">Sponge</p>
+            <Link href="https://x.com/spongedotsol">
+              <p className="text-3xl font-nanum animate-pulse drop-shadow-[0_0_4px_rgba(0, 0, 0,0.8)]">
+                Sponge
+              </p>
             </Link>
             <div className="text-sm">Powered by</div>
             <Image
@@ -108,11 +93,11 @@ const LandingPage = () => {
             <span>E</span>
           </div>
 
-          <div className="font-poppins font-[800] text-5xl w-[105vw] absolute top-[120px] left-[-10px] rotate-[-5deg] bg-white uppercase flex items-center py-2" ref={ref} >
+          <div className="font-poppins font-[800] text-5xl w-[105vw] absolute top-[120px] left-[-10px] rotate-[-5deg] bg-white uppercase flex items-center py-2">
             <div className="border-black border-y-4 relative overflow-hidden">
               <div className="animate-marquee tracking-wide">
-                Multichain liquidity infrastructure.
-                Multichain liquidity infrastructure.
+                Multichain liquidity infrastructure. Multichain liquidity
+                infrastructure.
               </div>
             </div>
           </div>
@@ -152,7 +137,7 @@ const LandingPage = () => {
               <p className="font-nanum text-3xl">Supported by the best: </p>
               <div className="flex items-center gap-2">
                 {images.map((image) => (
-                  <div key={image.src} className="relative">
+                  <div key={image.src} className="relative group inline-block">
                     <Image
                       key={image.src}
                       src={image.src}
@@ -160,6 +145,9 @@ const LandingPage = () => {
                       width={41}
                       height={41}
                     />
+                    <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-max px-3 py-1 rounded bg-black text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                      {image.alt}
+                    </div>
                   </div>
                 ))}
               </div>
