@@ -23,7 +23,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Sponge",
-  description: "The crypto investment market index on Solana",
+  description: "CDP stablecoins on SVM",
   icons: {
     icon: '/spongenobg.png',
   },

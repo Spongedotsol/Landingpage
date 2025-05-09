@@ -99,8 +99,7 @@ const LandingPage = () => {
           <div className="font-poppins font-[800] text-5xl w-[105vw] absolute top-[120px] left-[-10px] rotate-[-5deg] bg-white uppercase flex items-center py-2">
             <div className="border-black border-y-4 relative overflow-hidden">
               <div className="animate-marquee tracking-wide">
-                Multichain liquidity infrastructure. Multichain liquidity
-                infrastructure.
+              Decentralized stablecoin on SVM. Decentralized stablecoin on SVM.
               </div>
             </div>
           </div>
@@ -109,10 +108,10 @@ const LandingPage = () => {
           <div className="flex flex-col justify-between">
             <div className="flex flex-col">
               <p className="uppercase font-poppins text-5xl font-black leading-none">
-                invest in
+                Borrow
               </p>
               <p className="uppercase font-poppins text-5xl font-black leading-none">
-                crypto
+                stablecoins
               </p>
               <p
                 className="uppercase font-poppins text-5xl text-white font-black leading-none"
@@ -121,7 +120,7 @@ const LandingPage = () => {
                   color: "white",
                 }}
               >
-                seamlessly
+                efficiently
               </p>
             </div>
             <Link
