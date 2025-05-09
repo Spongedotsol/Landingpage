@@ -5,9 +5,9 @@ import { twMerge } from "tailwind-merge";
 
 export const metadata: Metadata = {
   title: "Sponge",
-  description:"Stake SOL, Get Exposure from Bluechips",
+  description:"Decentralized Stablecoin on SVM",
   icons: {
-    icon: '/spongenobg.png',
+    icon: '/circlesponge.png',
   },
 }
 
