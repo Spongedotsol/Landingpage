@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   title: "Sponge",
   description: "CDP stablecoins on SVM",
   icons: {
-    icon: '/spongenobg.png',
+    icon: '/Sponge.svg',
   },
 };
 
