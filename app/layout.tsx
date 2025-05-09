@@ -1,13 +1,25 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Nanum_Pen_Script, Poppins } from "next/font/google";
 import { config } from '@fortawesome/fontawesome-svg-core'
-import Head from 'next/head';
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import "./globals.css";
+import { twMerge } from "tailwind-merge";
 
 config.autoAddCss = false
 
 const inter = Inter({ subsets: ["latin"] });
+
+const nanum = Nanum_Pen_Script({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-nanum',
+});
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '600', '800', '900'],
+  variable: '--font-poppins',
+})
 
 export const metadata: Metadata = {
   title: "Sponge",
@@ -17,6 +29,7 @@ export const metadata: Metadata = {
   },
 };
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -24,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" >
-      <body className={inter.className}>
+      <body className={twMerge(inter.className, nanum.variable, poppins.variable)}>
         <div className="bg-white dark:bg-black">
           {children}
         </div>

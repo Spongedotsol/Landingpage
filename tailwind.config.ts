@@ -14,7 +14,26 @@ module.exports = {
   ],  
   darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        nanum: ['var(--font-nanum)', 'cursive'],
+        poppins: ['var(--font-poppins)']
+      },
+      animation: {
+        float: 'float 3s ease-in-out infinite',
+        marquee: 'marquee 20s linear infinite',
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '50%': { transform: 'translateX(5px)' },
+        },
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+      },
+    },
   },
   plugins: [addVariablesForColors],
 };
