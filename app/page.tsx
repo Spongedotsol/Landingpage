@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { twMerge } from "tailwind-merge";
 
 const images = [
   {
@@ -13,6 +14,7 @@ const images = [
   {
     src: "/landing/brands/brand4.png",
     alt: "Jito",
+    className: 'border border-black',
   },
   {
     src: "/landing/brands/brand5.png",
@@ -31,8 +33,9 @@ const images = [
     alt: "Solar",
   },
   {
-    src: "/landing/brands/brand9.png",
+    src: "/landing/brands/brand9.jpg",
     alt: "Gen3",
+    className: 'border border-black',
   },
 ];
 
@@ -142,9 +145,9 @@ const LandingPage = () => {
                       key={image.src}
                       src={image.src}
                       alt={image.alt}
-                      width={41}
-                      height={41}
-                      className="rounded-md"
+                      width={42}
+                      height={42}
+                      className={twMerge("rounded-lg", image.className)}
                     />
                     <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-max px-3 py-1 rounded bg-black text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity">
                       {image.alt}
