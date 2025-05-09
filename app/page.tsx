@@ -1,6 +1,15 @@
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { twMerge } from "tailwind-merge";
+
+export const metadata: Metadata = {
+  title: "Sponge",
+  description:"Stake SOL, Get Exposure from Bluechips",
+  icons: {
+    icon: '/spongenobg.png',
+  },
+}
 
 const images = [
   {
